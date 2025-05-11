@@ -1,0 +1,93 @@
+🏫 School Vaccination Portal
+
+A full-stack web application to manage and track vaccination drives in a school. 
+
+📌 Features
+- Simulated login system for school coordinators
+- Dashboard with real-time vaccination stats
+- Student management with form input and CSV bulk upload
+- Vaccination drive management with scheduling rules
+- Vaccination reporting with CSV export
+- MongoDB data persistence and React-based user interface
+
+🏗️ Tech Stack
+- Frontend: React, Axios, React Router
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Other: Multer (file uploads), CSV-parser, json2csv
+
+📂 Project Structure
+project-root/
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── app.js
+│   ├── server.js
+│   └── .env
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   ├── api/
+    │   ├── App.js
+    │   └── index.js
+    └── .env
+
+🚀 Getting Started
+
+🔧 Backend Setup
+cd backend
+npm install
+npm run start
+
+🌐 Frontend Setup
+cd frontend
+npm install
+npm start
+
+📃 API Endpoints
+
+Authentication:
+- POST /api/auth/login – Simulated admin login
+
+Students:
+- GET /api/students – List/search students
+- POST /api/students – Add/update student
+- POST /api/students/vaccinate – Mark student vaccinated
+- POST /api/students/upload – Upload students CSV
+
+Drives:
+- GET /api/drives/upcoming – Upcoming drives
+- POST /api/drives – Create drive
+- PUT /api/drives/:id – Edit drive
+
+Reports:
+- GET /api/reports – Get vaccination records
+- GET /api/reports/export/csv – Download CSV report
+
+🛠 DB Schema Overview
+
+Student:
+{
+  "studentId": "S101",
+  "name": "John Doe",
+  "grade": "6",
+  "vaccinatedRecords": [
+    {
+      "driveId": ObjectId,
+      "vaccineName": "Hepatitis B",
+      "date": "2025-06-01"
+    }
+  ]
+}
+
+VaccinationDrive:
+{
+  "vaccineName": "Hepatitis B",
+  "driveDate": "2025-06-01",
+  "availableDoses": 100,
+  "grades": ["5", "6", "7"]
+}
+
+Github Link: https://github.com/aayush-bits-pilani/fsad-assignment
